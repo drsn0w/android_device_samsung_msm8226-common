@@ -21,6 +21,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/msm8226-common/include
 
 # Architecture
 TARGET_CPU_VARIANT := krait
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
