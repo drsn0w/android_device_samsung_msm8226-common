@@ -124,3 +124,12 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 #	ln -sf /system/lib/modules/pronto/pronto_wlan.ko $(TARGET_OUT)/lib/modules/wlan.ko
 
 #TARGET_KERNEL_MODULES += WLAN_MODULES
+
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/samsung/msm8226-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+       hostapd.te \
+       platform_app.te \
+       kernel.te
