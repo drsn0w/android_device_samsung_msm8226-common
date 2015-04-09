@@ -176,6 +176,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+
+# Wifi
+PRODUCT_PACKAGES += \
+    hostapd_default.conf \
+    p2p_supplicant_overlay.conf \
+    wpa_supplicant_overlay.conf
+
 # Wifi
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
