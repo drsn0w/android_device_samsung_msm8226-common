@@ -16,8 +16,8 @@
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8974
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
+TARGET_BOARD_PLATFORM := msm8226
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
 # Architecture
 TARGET_CPU_VARIANT := krait
@@ -35,7 +35,7 @@ BOARD_CHARGING_CMDLINE_NAME := "androidboot.bootchg"
 BOARD_CHARGING_CMDLINE_VALUE := "true"
 
 # Display
-BOARD_EGL_CFG := device/samsung/msm8974-common/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/msm8226-common/configs/egl.cfg
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
