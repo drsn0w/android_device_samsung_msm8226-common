@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/msm8226-common/include
+
 # inherit from qcom-common
 -include device/samsung/qcom-common/BoardConfigCommon.mk
 
