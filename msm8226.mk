@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+LOCAL_PATH := device/samsung/msm8226-common
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/msm8226-common/overlay
 
