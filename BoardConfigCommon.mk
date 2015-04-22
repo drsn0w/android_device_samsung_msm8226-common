@@ -19,8 +19,8 @@
 TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
-# Architecture
-TARGET_CPU_VARIANT := cortex-a7
+
+
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -52,7 +52,7 @@ PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
 
 # Display
 BOARD_EGL_CFG := device/samsung/msm8226-common/configs/egl.cfg
-TARGET_QCOM_DISPLAY_VARIANT := 
+TARGET_QCOM_DISPLAY_VARIANT := caf-new
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Shader cache config options
@@ -67,13 +67,15 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_MEDIA_VARIANT := 
+TARGET_QCOM_MEDIA_VARIANT := caf-new
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/msm8226-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+	libqc-opt.te \
+	camera.te \
     file_contexts \
     app.te \
     bluetooth.te \
