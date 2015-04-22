@@ -135,10 +135,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += qcmediaplayer
 
-# Power HAL
-PRODUCT_PACKAGES += \
-    power.msm8226
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
