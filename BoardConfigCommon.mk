@@ -20,7 +20,7 @@ TARGET_BOARD_PLATFORM := msm8226
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
 # Architecture
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := krait
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -47,8 +47,12 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# Classpath
-PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
+# Charger
+BOARD_BATTERY_DEVICE_NAME := "battery"
+BOARD_CHARGING_CMDLINE_NAME := "androidboot.mode"
+BOARD_CHARGING_CMDLINE_VALUE := "charger"
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # Display
 BOARD_EGL_CFG := device/samsung/msm8226-common/configs/egl.cfg
@@ -70,31 +74,14 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 TARGET_QCOM_MEDIA_VARIANT := 
 
 # SELinux
+-include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += \
     device/samsung/msm8226-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    nfc.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa.te \
-    wpa_socket.te
+       hostapd.te \
+       platform_app.te \
+       kernel.te
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
