@@ -1,35 +1,33 @@
-# GPU device
-/dev/kgsl-3d0       u:object_r:gpu_device:s0
-/dev/msm_rotator    u:object_r:gpu_device:s0
+# Bluetooth
+/efs/bluetooth/bt_addr                                        u:object_r:bluetooth_efs_file:s0
 
-# Qualcomm Secure Execution Environment Communicator (QSEECOM) device
-/dev/qseecom        u:object_r:qseecom_device:s0
+# Camera
+/data/cam_socket.*                                            u:object_r:camera_socket:s0
+/sys/devices/virtual/camera(/.*)?                             u:object_r:sysfs_camera:s0
 
-# Qualcomm MSM Interface (QMI) devices
-/dev/socket/qmux_audio/*           u:object_r:qmux_audio_socket:s0
-/dev/socket/qmux_bluetooth/*       u:object_r:qmux_bluetooth_socket:s0
-/dev/socket/qmux_gps/*             u:object_r:qmux_gps_socket:s0
-/dev/socket/qmux_radio/*           u:object_r:qmux_radio_socket:s0
+# CMHW
+/sys/devices/virtual/timed_output/vibrator(/.*)?              u:object_r:sysfs_vibeamp:s0
+/sys/class/sec/sec_touchkey/keypad_enable                     u:object_r:sysfs_display:s0
 
-/dev/bcm2079x-i2c                  u:object_r:bcm2079x_device:s0
-/dev/diag                          u:object_r:diag_device:s0
-/dev/media([0-9])+                 u:object_r:camera_device:s0
-/dev/smd([0-9])+                   u:object_r:smd_device:s0
-/dev/mdm                           u:object_r:radio_device:s0
+# Display
+/sys/devices/fd922800.qcom,mdss_dsi/lcd/panel/power_reduce    u:object_r:sysfs_display:s0
+/sys/devices/virtual/graphics/fb0/rgb                         u:object_r:sysfs_display:s0
 
-# Qualcomm MSM Audio ACDB device
-/dev/msm_acdb       u:object_r:msm_acdb_device:s0
+# NFC
+/dev/pn547                                                    u:object_r:nfc_device:s0
 
-# Qualcomm audio firmware files
+# Partitions
+/dev/block/mmcblk0(.*)                                        u:object_r:mmc_block_device:s0
+/dev/block/mmcblk1(.*)                                        u:object_r:mmc_block_device:s0
 
-/dev/ks_hsic_bridge                u:object_r:kickstart_device:s0
-/dev/efs_hsic_bridge               u:object_r:kickstart_device:s0
+# Sensors
+/dev/alps_io                                                  u:object_r:io_device:s0
+/dev/iio:device0                                              u:object_r:io_device:s0
+/efs/FactoryApp/baro_delta                                    u:object_r:sensors_efs_file:s0
+/efs/gyro_cal_data                                            u:object_r:sensors_efs_file:s0
+/efs/prox_cal                                                 u:object_r:sensors_efs_file:s0
 
-/system/bin/qcks                   u:object_r:kickstart_exec:s0
-/system/bin/efsks                  u:object_r:kickstart_exec:s0
-/system/bin/ks                     u:object_r:kickstart_exec:s0
 
-/data/nfc(/.*)?                    u:object_r:nfc_data_file:s0
-
-/system/bin/hci_qcomm_init         u:object_r:hci_exec:s0
-/system/bin/bdAddrLoader           u:object_r:hci_exec:s0
+# WiFi
+/data/.wifiver.info                                           u:object_r:wifi_data_file:s0
+/efs/wifi/.mac.info                                           u:object_r:wifi_efs_file:s0

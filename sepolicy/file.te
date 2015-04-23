@@ -1,11 +1,5 @@
-# Qualcomm MSM Interface (QMI) socket types
-type qmux_audio_socket, file_type;
-type qmux_bluetooth_socket, file_type;
-type qmux_gps_socket, file_type;
-type qmux_radio_socket, file_type;
-
-type firmware_file, fs_type;
-
-allow efs_file rootfs:filesystem associate;
-allow cache_file rootfs:filesystem associate;
-allow asec_apk_file rootfs:filesystem associate;
+type sensors_efs_file, file_type;
+type sysfs_camera, fs_type, sysfs_type;
+type sysfs_display, fs_type, sysfs_type;
+type sysfs_vibeamp, fs_type, sysfs_type;
+type wifi_efs_file, file_type;
