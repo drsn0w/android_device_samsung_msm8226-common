@@ -24,7 +24,6 @@ TARGET_CPU_VARIANT := cortex-a7
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-TARGET_QCOM_AUDIO_VARIANT := caf
 BOARD_HAVE_NEW_QCOM_CSDCLIENT := true
 BOARD_HAVE_SAMSUNG_AUDIO := true
 BOARD_USES_FLUENCE_INCALL := true
@@ -48,11 +47,10 @@ TARGET_PROVIDES_CAMERA_HAL := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Classpath
-PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
+# PRODUCT_BOOT_JARS := $(subst $(space),:,$(PRODUCT_BOOT_JARS))
 
 # Display
 BOARD_EGL_CFG := device/samsung/msm8226-common/configs/egl.cfg
-TARGET_QCOM_DISPLAY_VARIANT := 
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Shader cache config options
@@ -67,34 +65,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_QCOM_MEDIA_VARIANT := 
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/samsung/msm8226-common/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    file_contexts \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    nfc.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    wpa.te \
-    wpa_socket.te
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
